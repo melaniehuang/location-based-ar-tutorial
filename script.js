@@ -8,8 +8,8 @@ function staticLoadPlaces() {
         {
             name: 'Magnemite',
             location: {
-                lat: -37.698881,
-                lng: 145.022854,
+                lat: -37.698820622107164,
+                lng: 145.0230781279465,
             }
         },
     ];
@@ -37,7 +37,7 @@ function renderPlaces(places) {
         model.setAttribute('width', '1');
         model.setAttribute('height', '1');
         model.setAttribute('rotation', '0 180 0');
-        model.setAttribute('position', '0 0 50');
+        model.setAttribute('position', '0 0 0');
         // model.setAttribute('scale', '0.25 0.25 0.25');
 
         model.addEventListener('loaded', () => {
