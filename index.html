@@ -13,14 +13,15 @@
 </head>
 <script src="./script.js"></script>
 <body style='margin: 0; overflow: hidden;'>
-    <a-assets>
-        <img id="gore-NRM" src="./assets/magnemite/textures/TCom_Gore_1K_normal.jpg">
-    </a-assets>
-
     <a-scene
         vr-mode-ui="enabled: false"
 		embedded
         arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
+        
+        <a-assets>
+            <img id="gore-NRM" src="./assets/magnemite/textures/TCom_Gore_1K_normal.jpg">
+         </a-assets>
+         
         <!-- <a-entity gltf-model="./assets/magnemite/scene.gltf" rotation="0 180 0" scale="0.01 0.01 0.01" position="0 10 -50" gps-entity-place="longitude: 145.022854; latitude: -37.698881;" animation-mixer/> -->
         <!-- <a-entity gltf-model="./assets/magnemite/scene.gltf" rotation="0 180 0" scale="0.001 0.001 0.001" position="0 100 -150" gps-entity-place="longitude: 145.022854; latitude: -37.698881;"/> -->
         <a-entity position="0 0 0">
