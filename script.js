@@ -29,13 +29,18 @@ function renderPlaces(places) {
         // model.setAttribute('position', '0 0 -200');
         // model.setAttribute('animation-mixer', '');
         // model.setAttribute('scale', '0.25 0.25 0.25');
+        <a-box color="tomato" depth="2" height="4" width="0.5"></a-box>
 
 
         let model = document.createElement('a-box');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+        model.setAttribute('color', 'blue');
+        model.setAttribute('depth', '2');
+        model.setAttribute('width', '2');
+        model.setAttribute('height', '2');
         model.setAttribute('rotation', '0 180 0');
-        model.setAttribute('position', '0 0 -200');
-        model.setAttribute('scale', '0.25 0.25 0.25');
+        model.setAttribute('position', '0 0 -20');
+        // model.setAttribute('scale', '0.25 0.25 0.25');
 
         model.addEventListener('loaded', () => {
             window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
