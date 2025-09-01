@@ -26,6 +26,13 @@ function staticLoadPlaces() {
                 lng: 145.0234950194138,
             },
             color: 'white'
+        },{
+            name: 'position-4',
+            location: {
+                lat: -37.70046318788387,
+                lng: 145.01920972398116,
+            },
+            color: 'red'
         }
     ];
 }
@@ -55,7 +62,7 @@ function renderPlaces(places) {
         model.setAttribute('color', place.color);
         model.setAttribute('radius', '2');
         model.setAttribute('position', '0 0 0');
-        model.setAttribute('animation', "property: rotation; to: 0 360 0; dur: 2000; easing: linear; loop: true")        
+        model.setAttribute('animation', "property: rotation; to: 0 360 0; dur: 8000; easing: linear; loop: true")
         
         model.addEventListener('loaded', () => {
             window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))

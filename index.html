@@ -16,16 +16,19 @@
     <a-scene
         vr-mode-ui="enabled: false"
 		embedded
-        arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
+        arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'
+        fog="type: exponential; color: #111; density: 0.01">
         
         <a-assets>
             <img id="gore-NRM" src="./assets/magnemite/textures/TCom_Gore_1K_normal.jpg">
          </a-assets>
-         
+
         <!-- <a-entity gltf-model="./assets/magnemite/scene.gltf" rotation="0 180 0" scale="0.01 0.01 0.01" position="0 10 -50" gps-entity-place="longitude: 145.022854; latitude: -37.698881;" animation-mixer/> -->
         <!-- <a-entity gltf-model="./assets/magnemite/scene.gltf" rotation="0 180 0" scale="0.001 0.001 0.001" position="0 100 -150" gps-entity-place="longitude: 145.022854; latitude: -37.698881;"/> -->
         <a-entity position="0 0 0">
-            <a-camera user-height="1.6" near ="0.01" far="10" gps-camera rotation-reader></a-camera>
+            <a-camera user-height="1.6" maxDistance="5" gps-camera rotation-reader></a-camera>
         </a-entity>
+        <a-grid></a-grid>
+
 	</a-scene>
 </body>
