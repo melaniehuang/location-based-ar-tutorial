@@ -1,29 +1,3 @@
-
-if (window.navigator.mediaDevices && window.navigator.mediaDevices.getUserMedia)
-	window.navigator.mediaDevices.getUserMedia({audio: false, video: {facingMode: {exact: 'environment'}}}).then(async stream => {
-		stream.getTracks().forEach(track => {
-			let trackSettings = track.getSettings();
-
-			let ios = () => {
-				if (typeof window === 'undefined' || typeof navigator === 'undefined') return false;
-				return /iPhone|iPad|iPod/i.test(navigator.userAgent || navigator.vendor || (window.opera && opera.toString() === '[object Opera]'));
-			};
-
-			if (ios()) {
-				this.deviceCameraInitialised = true;
-			} else if (trackSettings.width && trackSettings.height) {
-				console.log('webcam width ' + trackSettings.width);
-				console.log('webcam height ' + trackSettings.height);
-				console.log('webcam aspect ratio ' + (trackSettings.width / trackSettings.height));
-
-				window.ARJS_WEBCAM_ASPECT_RATIO = (trackSettings.width / trackSettings.height);
-				this.deviceCameraInitialised = true;
-			}
-
-			track.stop();
-		});
-	}).catch(e => console.log(e));
-
 window.onload = () => {
     let places = staticLoadPlaces();
      renderPlaces(places);
@@ -101,3 +75,27 @@ function renderPlaces(places) {
 function startAR(){
     document.getElementById("startScreen").style.display = 'none';
 }
+
+window.addEventListener('orientationchange', () => {
+
+   // On non-orientable device, isLandscape is set to true
+  const isLandscape = window.orientation !== undefined
+    ? (window.orientation === -90 || window.orientation === 90)
+    : true
+
+  // Store the current artoolkit projection matrix
+  let matrix = artoolkitContext.getProjectionMatrix()
+
+  // If the device is in landscape mode, we scale the matrix to invert the aspect ratio.
+  // I use 4 / 3 because my artoolkitSource is set to 640 x 480. 
+  if (isLandscape) {
+    mat = mat.clone()
+    const ratio = 4 / 3
+    matrix.elements[0] *= ratio
+    matrix.elements[5] *= 1 / ratio 
+  } 
+
+  // Update the projection matrix of the camera
+  camera.projectionMatrix.copy(matrix)
+
+})
