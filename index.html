@@ -23,6 +23,8 @@
         arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
         <!-- <a-entity gltf-model="./assets/magnemite/scene.gltf" rotation="0 180 0" scale="0.01 0.01 0.01" position="0 10 -50" gps-entity-place="longitude: 145.022854; latitude: -37.698881;" animation-mixer/> -->
         <!-- <a-entity gltf-model="./assets/magnemite/scene.gltf" rotation="0 180 0" scale="0.001 0.001 0.001" position="0 100 -150" gps-entity-place="longitude: 145.022854; latitude: -37.698881;"/> -->
-        <a-camera gps-camera rotation-reader></a-camera>
+        <a-entity position="0 0 -5">
+            <a-camera user-height="1.6" gps-camera rotation-reader></a-camera>
+        </a-entity>
 	</a-scene>
 </body>
