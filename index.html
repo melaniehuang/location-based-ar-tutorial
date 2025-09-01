@@ -8,21 +8,26 @@
     <script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/3.4.7/three.js/build/ar-threex-location-only.js'></script>
     <script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/3.4.7/aframe/build/aframe-ar.js'></script>
     <script src="./script.js"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
 </head>
 
-<body style='margin: 0; overflow: hidden;'>
-    <a-scene
-        vr-mode-ui="enabled: false"
-        arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'
-        >
-        
-        <a-assets>
-            <img id="gore-NRM" src="./assets/magnemite/textures/TCom_Gore_1K_normal.jpg">
-        </a-assets>
-        <a-entity position="0 0 5">
-            <a-camera arjs-look-controls='smoothingFactor:0.1' user-height="1.6" gps-camera='maxDistance: 5;' rotation-reader></a-camera>
-        </a-entity>
-        <a-grid></a-grid>
+<body>
+    <div id="startScreen">
 
-	</a-scene>
+    </div>
+    <div id="ar-viewer">
+        <a-scene
+            vr-mode-ui="enabled: false"
+            arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'
+            >
+            
+            <a-assets>
+                <img id="gore-NRM" src="./assets/magnemite/textures/TCom_Gore_1K_normal.jpg">
+            </a-assets>
+            <a-entity position="0 0 5">
+                <a-camera user-height="1.6" gps-camera='maxDistance: 5;' rotation-reader></a-camera>
+            </a-entity>
+            <a-grid></a-grid>
+        </a-scene>
+    </div>
 </body>
