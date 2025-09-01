@@ -26,9 +26,9 @@ function renderPlaces(places) {
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
         model.setAttribute('gltf-model', './assets/magnemite/bbboots.gltf');
         model.setAttribute('rotation', '0 180 0');
-        model.setAttribute('position', '0 -10 30');
+        model.setAttribute('position', '0 -10 10');
         //model.setAttribute('animation-mixer', '');
-        model.setAttribute('scale', '0.01 0.01 0.01');
+        model.setAttribute('scale', '0.1 0.1 0.1');
 
         model.addEventListener('loaded', () => {
             window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
