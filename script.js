@@ -6,12 +6,27 @@ window.onload = () => {
 function staticLoadPlaces() {
     return [
         {
-            name: 'Magnemite',
+            name: 'position-1',
             location: {
-                lat: -37.698820622107164,
-                lng: 145.0230781279465,
-            }
-        },
+                lat: -37.698823465370296,
+                lng: 145.02308461004446,
+            },
+            color: 'white'
+        },{
+            name: 'position-2',
+            location: {
+                lat: -37.69822728976309,
+                lng: 145.02266325330373,
+            },
+            color: 'white'
+        },{
+            name: 'position-3',
+            location: {
+                lat: -37.69942340939379,
+                lng: 145.0234950194138,
+            },
+            color: 'white'
+        }
     ];
 }
 
@@ -30,15 +45,19 @@ function renderPlaces(places) {
         // model.setAttribute('animation-mixer', '');
         // model.setAttribute('scale', '0.25 0.25 0.25');
 
-        let model = document.createElement('a-box');
+        let model = document.createElement('a-sphere');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-        model.setAttribute('color', 'blue');
-        model.setAttribute('depth', '1');
-        model.setAttribute('width', '1');
-        model.setAttribute('height', '1');
-        //model.setAttribute('rotation', '0 180 0');
+        model.setAttribute('src', './assets/magnemite/textures/TCom_Gore_2K_albedo.jpg');
+        model.setAttribute('repeat', '2 2');
+        model.setAttribute('normal-map', '#gore-NRM');
+        model.setAttribute('normal-texture-repeat', '2 2');
+        model.setAttribute('roughness', '0');
+        model.setAttribute('color', place.color);
+        model.setAttribute('radius', '2');
         model.setAttribute('position', '0 0 0');
-        // model.setAttribute('scale', '0.25 0.25 0.25');
+        // model.setAttribute('metalness', '1');
+        
+        
 
         model.addEventListener('loaded', () => {
             window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
