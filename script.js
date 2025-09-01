@@ -71,3 +71,7 @@ function renderPlaces(places) {
         scene.appendChild(model);
     });
 }
+
+function startAR(){
+    document.getElementById("startScreen").style.display = 'none';
+}
