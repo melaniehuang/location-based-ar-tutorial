@@ -55,14 +55,7 @@ function renderPlaces(places) {
         model.setAttribute('color', place.color);
         model.setAttribute('radius', '2');
         model.setAttribute('position', '0 0 0');
-        
-        let animation = document.createElement('a-animation');
-        animation.setAttribute('attribute', 'rotation');
-        animation.setAttribute('to', '0 360 0');
-        animation.setAttribute('repeat', 'indefinite');
-        animation.setAttribute('dur', '1000');
-
-        model.appendChild(animation);
+        model.setAttribute('animation', "property: rotation; to: 0 360 0; dur: 2000; easing: linear; loop: true")        
         
         model.addEventListener('loaded', () => {
             window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
