@@ -26,6 +26,7 @@ function renderPlaces(places) {
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
         model.setAttribute('gltf-model', './assets/magnemite/scene.gltf');
         model.setAttribute('rotation', '0 180 0');
+        model.setAttribute('position', '10 100 100');
         //model.setAttribute('animation-mixer', '');
         model.setAttribute('scale', '0.01 0.01 0.01');
 
