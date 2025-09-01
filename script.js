@@ -17,7 +17,7 @@ function staticLoadPlaces() {
 
 function renderPlaces(places) {
     let scene = document.querySelector('a-scene');
-
+    console.log("rendering places");
     places.forEach((place) => {
         let latitude = place.location.lat;
         let longitude = place.location.lng;
@@ -26,8 +26,8 @@ function renderPlaces(places) {
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
         model.setAttribute('gltf-model', './assets/magnemite/scene.gltf');
         model.setAttribute('rotation', '0 180 0');
-        model.setAttribute('position', '0 2 1');
-        //model.setAttribute('animation-mixer', '');
+        // model.setAttribute('position', '0 2 1');
+        model.setAttribute('animation-mixer', '');
         model.setAttribute('scale', '0.01 0.01 0.01');
 
         model.addEventListener('loaded', () => {
