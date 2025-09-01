@@ -33,11 +33,11 @@ function renderPlaces(places) {
         let model = document.createElement('a-box');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
         model.setAttribute('color', 'blue');
-        model.setAttribute('depth', '2');
-        model.setAttribute('width', '2');
-        model.setAttribute('height', '2');
+        model.setAttribute('depth', '1');
+        model.setAttribute('width', '1');
+        model.setAttribute('height', '1');
         model.setAttribute('rotation', '0 180 0');
-        model.setAttribute('position', '0 0 -20');
+        model.setAttribute('position', '0 0 50');
         // model.setAttribute('scale', '0.25 0.25 0.25');
 
         model.addEventListener('loaded', () => {
