@@ -36,7 +36,7 @@ function renderPlaces(places) {
         model.setAttribute('depth', '1');
         model.setAttribute('width', '1');
         model.setAttribute('height', '1');
-        model.setAttribute('rotation', '0 180 0');
+        //model.setAttribute('rotation', '0 180 0');
         model.setAttribute('position', '0 0 0');
         // model.setAttribute('scale', '0.25 0.25 0.25');
 
