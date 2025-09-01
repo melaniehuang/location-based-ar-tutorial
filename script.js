@@ -29,8 +29,6 @@ function renderPlaces(places) {
         // model.setAttribute('position', '0 0 -200');
         // model.setAttribute('animation-mixer', '');
         // model.setAttribute('scale', '0.25 0.25 0.25');
-        <a-box color="tomato" depth="2" height="4" width="0.5"></a-box>
-
 
         let model = document.createElement('a-box');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
