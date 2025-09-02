@@ -17,7 +17,8 @@
         <h1>Haymarket 2050</h1>
         <button onclick="startAR()">Start</button>
     </div>
-    <img id="ar-frame" src="./assets/frame.png"></img>
+    <!-- <img id="ar-frame" src="./assets/frame.png"></img> -->
+    <div id="gpsPosition">GPS: <span id="long">0.00</span>, <span id="lat">0.00</span></div>
     <a-scene
         vr-mode-ui="enabled: false"
         arjs='sourceType: webcam; videoTexture: true; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'
