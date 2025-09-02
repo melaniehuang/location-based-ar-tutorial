@@ -32,16 +32,8 @@ function renderPlaces(places) {
         let latitude = place.location.lat;
         let longitude = place.location.lng;
 
-        // let model = document.createElement('a-entity');
-        // model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-        // model.setAttribute('gltf-model', './assets/magnemite/bboots.gltf');
-        // model.setAttribute('rotation', '0 180 0');
-        // model.setAttribute('position', '0 0 -200');
-        // model.setAttribute('animation-mixer', '');
-        // model.setAttribute('scale', '0.25 0.25 0.25');
-
         let model = document.createElement('a-sphere');
-        model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+        model.setAttribute('gps-new-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
         model.setAttribute('src', './assets/magnemite/textures/TCom_Gore_2K_albedo.jpg');
         model.setAttribute('repeat', '2 2');
         model.setAttribute('normal-map', '#gore-NRM');
