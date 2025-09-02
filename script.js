@@ -36,8 +36,6 @@ function renderPlaces(places) {
         let latitude = place.location.lat;
         let longitude = place.location.lng;
         
-        let container = document.getElementById('sphereContainer');
-
         let model = document.createElement('a-sphere');
         model.setAttribute('gps-new-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
         model.setAttribute('src', './assets/magnemite/textures/TCom_Gore_2K_albedo.jpg');
@@ -53,8 +51,7 @@ function renderPlaces(places) {
             window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
         });
 
-        container.appendChild(model);
-        scene.appendChild(container);
+        scene.appendChild(model);
     });
 }
 
