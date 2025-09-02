@@ -1,12 +1,16 @@
+let currentLat = 0;
+let currentLong = 0;
+
 window.onload = () => {
     let places = staticLoadPlaces();
     renderPlaces(places);
 
     let testEntityAdded = false;
     const el = document.querySelector("[gps-new-camera]");
-    console.log(el)
     el.addEventListener("gps-camera-update-position", e => {
         if(!testEntityAdded) {
+            currentLong = `${e.detail.position.longitude}`;
+            currentLat = `${e.detail.position.latitude}`;
             document.getElementById("long").innerHTML = `${e.detail.position.longitude}`;
             document.getElementById("lat").innerHTML = `${e.detail.position.latitude}`;
         }
