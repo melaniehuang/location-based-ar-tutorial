@@ -35,6 +35,8 @@ function renderPlaces(places) {
     places.forEach((place) => {
         let latitude = place.location.lat;
         let longitude = place.location.lng;
+        
+        let container = document.getElementById('sphereContainer');
 
         let model = document.createElement('a-sphere');
         model.setAttribute('gps-new-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
@@ -47,12 +49,12 @@ function renderPlaces(places) {
         model.setAttribute('radius', '2');
         model.setAttribute('position', '0 0 0');
         model.setAttribute('animation', "property: rotation; to: 0 360 0; dur: 8000; easing: linear; loop: true")
-        
         model.addEventListener('loaded', () => {
             window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
         });
 
-        scene.appendChild(model);
+        container.appendChild(model);
+        scene.appendChild(container);
     });
 }
 
