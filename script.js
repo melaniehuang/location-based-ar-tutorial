@@ -1,6 +1,15 @@
 window.onload = () => {
     let places = staticLoadPlaces();
-     renderPlaces(places);
+    renderPlaces(places);
+
+    let testEntityAdded = false;
+    console.log('loading position')
+    const el = document.querySelector("a-camera");
+    el.addEventListener("gps-camera-update-position", e => {
+        if(!testEntityAdded) {
+            alert(`Got first GPS position: lon ${e.detail.position.longitude} lat ${e.detail.position.latitude}`);
+        }
+    });
 };
 
 function staticLoadPlaces() {
@@ -8,29 +17,8 @@ function staticLoadPlaces() {
         {
             name: 'position-1',
             location: {
-                lat: -37.698823465370296,
-                lng: 145.02308461004446,
-            },
-            color: 'white'
-        },{
-            name: 'position-2',
-            location: {
-                lat: -37.69822728976309,
-                lng: 145.02266325330373,
-            },
-            color: 'white'
-        },{
-            name: 'position-3',
-            location: {
-                lat: -37.69942340939379,
-                lng: 145.0234950194138,
-            },
-            color: 'white'
-        },{
-            name: 'position-4',
-            location: {
-                lat: -37.70046318788387,
-                lng: 145.01920972398116,
+                lat: -37.698934430720804,
+                lng: 145.0227020886409,
             },
             color: 'red'
         }
@@ -39,7 +27,6 @@ function staticLoadPlaces() {
 
 function renderPlaces(places) {
     let scene = document.querySelector('a-scene');
-    console.log("rendering places");
     places.forEach((place) => {
         let latitude = place.location.lat;
         let longitude = place.location.lng;
@@ -75,27 +62,3 @@ function renderPlaces(places) {
 function startAR(){
     document.getElementById("startScreen").style.display = 'none';
 }
-
-window.addEventListener('orientationchange', () => {
-
-   // On non-orientable device, isLandscape is set to true
-  const isLandscape = window.orientation !== undefined
-    ? (window.orientation === -90 || window.orientation === 90)
-    : true
-
-  // Store the current artoolkit projection matrix
-  let matrix = artoolkitContext.getProjectionMatrix()
-
-  // If the device is in landscape mode, we scale the matrix to invert the aspect ratio.
-  // I use 4 / 3 because my artoolkitSource is set to 640 x 480. 
-  if (isLandscape) {
-    mat = mat.clone()
-    const ratio = 4 / 3
-    matrix.elements[0] *= ratio
-    matrix.elements[5] *= 1 / ratio 
-  } 
-
-  // Update the projection matrix of the camera
-  camera.projectionMatrix.copy(matrix)
-
-})
