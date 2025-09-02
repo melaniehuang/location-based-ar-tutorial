@@ -23,17 +23,17 @@
     </div>
     <!-- <img id="ar-frame" src="./assets/frame.png"></img> -->
     <div id="gpsPosition">GPS: <span id="long">0.00</span>, <span id="lat">0.00</span></div>
-    >
+    
     <a-scene
         vr-mode-ui="enabled: false"
         arjs='sourceType: webcam; videoTexture: true; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'
-        >    
+        >
         <a-assets>
             <img id="gore-NRM" src="./assets/magnemite/textures/TCom_Gore_1K_normal.jpg">
         </a-assets>
+        
         <a-entity position="0 0 0">
-            <a-camera arjs-device-orientation-controls='smoothingFactor: 0.1' gps-new-camera='gpsTimeInterval: 3000; gpsMinDistance: 1' rotation-reader></a-camera>
+            <a-camera arjs-device-orientation-controls='smoothingFactor: 0.1' look-controls-enabled='false' gps-new-camera='gpsTimeInterval: 3000; gpsMinDistance: 1' rotation-reader></a-camera>
         </a-entity>
-        <a-grid></a-grid>
     </a-scene>
 </body>

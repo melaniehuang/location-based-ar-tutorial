@@ -1,5 +1,5 @@
-let currentLat = 0;
-let currentLong = 0;
+// let currentLat = 0;
+// let currentLong = 0;
 
 window.onload = () => {
     let places = staticLoadPlaces();
@@ -9,8 +9,8 @@ window.onload = () => {
     const el = document.querySelector("[gps-new-camera]");
     el.addEventListener("gps-camera-update-position", e => {
         if(!testEntityAdded) {
-            currentLong = `${e.detail.position.longitude}`;
-            currentLat = `${e.detail.position.latitude}`;
+            // currentLong = `${e.detail.position.longitude}`;
+            // currentLat = `${e.detail.position.latitude}`;
             document.getElementById("long").innerHTML = `${e.detail.position.longitude}`;
             document.getElementById("lat").innerHTML = `${e.detail.position.latitude}`;
         }
@@ -46,7 +46,7 @@ function renderPlaces(places) {
         model.setAttribute('color', place.color);
         model.setAttribute('radius', '2');
         model.setAttribute('position', '0 0 0');
-        model.setAttribute('animation', "property: rotation; to: 0 360 0; dur: 8000; easing: linear; loop: true")
+        model.setAttribute('animation', "property: rotation; to: 0 360 0; dur: 8000; easing: linear; loop: true");
         model.addEventListener('loaded', () => {
             window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
         });
