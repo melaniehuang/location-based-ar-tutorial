@@ -3,8 +3,8 @@ window.onload = () => {
     renderPlaces(places);
 
     let testEntityAdded = false;
-    console.log('loading position')
-    const el = document.querySelector("a-camera");
+    const el = document.querySelector("[gps-new-camera]");
+    console.log(el)
     el.addEventListener("gps-camera-update-position", e => {
         if(!testEntityAdded) {
             document.getElementById("long").innerHTML = '${e.detail.position.longitude}';
