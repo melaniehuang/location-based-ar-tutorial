@@ -22,17 +22,24 @@ function staticLoadPlaces() {
         {
             name: 'position-1',
             location: {
-                lat: -37.698934430720804,
-                lng: 145.0227020886409,
+                lat: -37.6982281933199,
+                lng: 145.02264958232703,
             },
             color: 'red'
         }, {
             name: 'position-2',
             location: {
-                lat: -37.69882039756819,
-                lng: 145.0230738863764,
+                lat: -37.69881821016239,
+                lng: 145.02308088002627,
             },
             color: 'blue'
+        }, {
+            name: 'position-3',
+            location: {
+                lat: -37.699077200463364,
+                lng: 145.0232665464545,
+            },
+            color: 'white'
         }
     ];
 }
